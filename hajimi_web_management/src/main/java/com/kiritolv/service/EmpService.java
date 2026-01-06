@@ -1,0 +1,22 @@
+package com.kiritolv.service;
+
+import com.kiritolv.pojo.Emp;
+import com.kiritolv.pojo.EmpQueryParam;
+import com.kiritolv.pojo.LoginInfo;
+import com.kiritolv.pojo.PageResult;
+
+import java.util.List;
+
+public interface EmpService {
+    PageResult<Emp> empQuery(EmpQueryParam empQueryParam);
+
+    void save(Emp emp);
+
+    void delete(List<Integer> ids);
+
+    Emp getInfo(Integer id);
+
+    void update(Emp emp);
+
+    LoginInfo login(Emp emp);
+}
