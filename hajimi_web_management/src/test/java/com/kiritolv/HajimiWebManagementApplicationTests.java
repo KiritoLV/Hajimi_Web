@@ -19,7 +19,7 @@ class HajimiWebManagementApplicationTests {
     public void testGenJwt() {
         Map<String, Object> claims = new HashMap<>();
         claims.put("id", 10);
-        claims.put("username", "itheima");
+        claims.put("username", "kiritolv");
 
         String jwt = Jwts.builder().signWith(SignatureAlgorithm.HS256, "aXRjYXN0")
                 .addClaims(claims)

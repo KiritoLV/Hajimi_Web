@@ -66,7 +66,7 @@ public class EmpController {
      */
     @GetMapping("/list")
     public Result getAllEmp(){
-
-        return Result.success();
+        List<Emp> emplist = empService.getAllEmp();
+        return Result.success(emplist);
     }
 }

@@ -19,4 +19,6 @@ public interface EmpService {
     void update(Emp emp);
 
     LoginInfo login(Emp emp);
+
+    List<Emp> getAllEmp();
 }
