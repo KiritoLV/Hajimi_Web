@@ -1,5 +1,6 @@
 package com.kiritolv.controller;
 
+import com.kiritolv.pojo.ClazzCountOption;
 import com.kiritolv.pojo.JobOption;
 import com.kiritolv.pojo.Result;
 import com.kiritolv.service.ReportService;
@@ -32,4 +33,17 @@ public class ReportController {
         List<Map> genderList = reportService.getEmpGenderData();
         return Result.success(genderList);
     }
+    @GetMapping("/studentDegreeData")
+    public Result getStuDegreeData(){
+        log.info("统计学员学历信息");
+        List<Map> degreeList = reportService.getStuDegreeData();
+        return Result.success(degreeList);
+    }
+    @GetMapping("/studentCountData")
+    public Result getStuCountData(){
+        log.info("统计每一个班级人数");
+        ClazzCountOption countOption = reportService.getStuCountData();
+        return Result.success(countOption);
+    }
+
 }

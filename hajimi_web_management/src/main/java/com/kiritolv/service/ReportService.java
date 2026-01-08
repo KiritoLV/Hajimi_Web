@@ -1,5 +1,6 @@
 package com.kiritolv.service;
 
+import com.kiritolv.pojo.ClazzCountOption;
 import com.kiritolv.pojo.JobOption;
 
 import java.util.List;
@@ -9,4 +10,8 @@ public interface ReportService {
     JobOption getEmpJobData();
 
     List<Map> getEmpGenderData();
+
+    List<Map> getStuDegreeData();
+
+    ClazzCountOption getStuCountData();
 }

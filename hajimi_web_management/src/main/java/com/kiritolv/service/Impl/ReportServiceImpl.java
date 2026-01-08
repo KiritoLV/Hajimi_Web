@@ -1,6 +1,9 @@
 package com.kiritolv.service.Impl;
 
+import com.kiritolv.mapper.ClazzMapper;
 import com.kiritolv.mapper.EmpMapper;
+import com.kiritolv.mapper.StudentMapper;
+import com.kiritolv.pojo.ClazzCountOption;
 import com.kiritolv.pojo.JobOption;
 import com.kiritolv.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,10 @@ import java.util.Map;
 public class ReportServiceImpl implements ReportService {
     @Autowired
     private EmpMapper empMapper;
+    @Autowired
+    private StudentMapper studentMapper;
+    @Autowired
+    private ClazzMapper clazzMapper;
 
     @Override
     public JobOption getEmpJobData() {
@@ -26,5 +33,18 @@ public class ReportServiceImpl implements ReportService {
     @Override
     public List<Map> getEmpGenderData() {
         return empMapper.countEmpGenderData();
+    }
+
+    @Override
+    public List<Map> getStuDegreeData() {
+        return studentMapper.countStudentDegreeData();
+    }
+
+    @Override
+    public ClazzCountOption getStuCountData() {
+        List<Map<String,Object>> list= clazzMapper.countEmpJobData();
+        List<Object> clazzList = list.stream().map(dataMap -> dataMap.get("clazz")).toList();
+        List<Object> dataList = list.stream().map(dataMap -> dataMap.get("value")).toList();
+        return new ClazzCountOption(clazzList,dataList);
     }
 }

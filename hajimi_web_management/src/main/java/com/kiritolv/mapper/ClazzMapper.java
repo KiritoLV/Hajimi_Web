@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface ClazzMapper {
@@ -44,4 +45,6 @@ public interface ClazzMapper {
      */
     @Select("select * from clazz")
     List<Clazz> findAll();
+
+    List<Map<String, Object>> countEmpJobData();
 }
