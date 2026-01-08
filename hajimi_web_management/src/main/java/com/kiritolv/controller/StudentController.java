@@ -1,5 +1,6 @@
 package com.kiritolv.controller;
 
+import com.kiritolv.anno.Log;
 import com.kiritolv.pojo.PageResult;
 import com.kiritolv.pojo.Result;
 import com.kiritolv.pojo.Student;
@@ -20,6 +21,7 @@ public class StudentController {
     /**
      * 添加学生
      */
+    @Log
     @PostMapping
     public Result save(@RequestBody Student student){
         studentService.save(student);
@@ -51,6 +53,7 @@ public class StudentController {
     /**
      * 修改学生信息
      */
+    @Log
     @PutMapping
     public Result update(@RequestBody Student student){
         studentService.update(student);
@@ -60,6 +63,7 @@ public class StudentController {
     /**
      * 删除学生信息
      */
+    @Log
     @DeleteMapping("/{ids}")
     public Result delete(@PathVariable List<Integer> ids){
         studentService.delete(ids);

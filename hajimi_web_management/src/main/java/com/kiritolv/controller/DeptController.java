@@ -1,5 +1,6 @@
 package com.kiritolv.controller;
 
+import com.kiritolv.anno.Log;
 import com.kiritolv.pojo.Dept;
 import com.kiritolv.pojo.Result;
 import com.kiritolv.service.DeptService;
@@ -34,6 +35,7 @@ public class DeptController {
 //        System.out.println("delete ID"+id);
 //        return Result.success();
 //    }
+    @Log
     @DeleteMapping
     public Result delete(Integer id){
 //        System.out.println("delete ID"+id);
@@ -44,6 +46,7 @@ public class DeptController {
     /*
     新增部门
      */
+    @Log
     @PostMapping
     public Result addDept(@RequestBody Dept dept){
         System.out.println("add dept "+dept);
@@ -62,6 +65,7 @@ public class DeptController {
     /*
     修改部门name
      */
+    @Log
     @PutMapping
     public Result updatename(@RequestBody Dept dept){
         System.out.println("修改部门ID"+dept.getId()+"名字"+dept.getName());

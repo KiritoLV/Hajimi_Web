@@ -1,5 +1,6 @@
 package com.kiritolv.controller;
 
+import com.kiritolv.anno.Log;
 import com.kiritolv.pojo.Clazz;
 import com.kiritolv.pojo.PageResult;
 import com.kiritolv.pojo.Result;
@@ -20,6 +21,7 @@ public class ClazzController {
     /**
      * 新增班级
      */
+    @Log
     @PostMapping
     public Result save(@RequestBody Clazz clazz){
         clazzService.save(clazz);
@@ -51,6 +53,7 @@ public class ClazzController {
     /**
      * 更新班级信息
      */
+    @Log
     @PutMapping
     public Result update(@RequestBody Clazz clazz){
         clazzService.update(clazz);
@@ -60,6 +63,7 @@ public class ClazzController {
     /**
      * 根据ID删除班级
      */
+    @Log
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id){
         clazzService.deleteById(id);
