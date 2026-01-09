@@ -62,4 +62,7 @@ public interface StudentMapper {
      * 批量插入
      */
     void insertBatch(List<Student> studentList);
+
+    @Select("SELECT COUNT(*) FROM student")
+    Integer getData();
 }

@@ -1,5 +1,6 @@
 package com.kiritolv.mapper;
 
+import com.kiritolv.pojo.Dash;
 import com.kiritolv.pojo.OperateLog;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

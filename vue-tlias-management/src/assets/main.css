@@ -1,0 +1,151 @@
+/* -----------------
+ * Reset & Base
+ * ----------------- */
+:root {
+  --color-primary: #7367f0;
+  --color-primary-light-1: #8c82f2;
+  --color-primary-light-2: #a59df5;
+  --color-success: #28c76f;
+  --color-warning: #ff9f43;
+  --color-danger: #ea5455;
+  --color-info: #909399;
+
+  --text-color-primary: #303133;
+  --text-color-regular: #606266;
+  --text-color-secondary: #909399;
+  --text-color-placeholder: #c0c4cc;
+
+  --border-color-base: #dcdfe6;
+  --border-color-light: #e4e7ed;
+  --border-color-lighter: #ebeef5;
+  --border-color-extra-light: #f2f6fc;
+
+  --bg-color-page: #f0f2f5;
+  --bg-color-base: #ffffff;
+  --bg-color-overlay: #ffffff;
+
+  --box-shadow-base: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  --border-radius-base: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color-primary);
+  background-color: var(--bg-color-page);
+  background-image: linear-gradient(180deg, #f8faff 0%, #f0f2f5 100%);
+  min-height: 100vh;
+}
+
+/* -----------------
+ * Layout & Card
+ * ----------------- */
+.page-container {
+  padding: 20px;
+}
+
+.content-card {
+  background: var(--bg-color-base);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* -----------------
+ * Page Header
+ * ----------------- */
+.page-header {
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color-primary);
+  margin-bottom: 8px;
+}
+
+/* Override Element Plus Breadcrumb */
+.el-breadcrumb__inner,
+.el-breadcrumb__inner a {
+  font-weight: 400 !important;
+  color: var(--text-color-regular) !important;
+}
+.el-breadcrumb__item:last-child .el-breadcrumb__inner {
+  color: var(--text-color-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* -----------------
+ * Search & Filter Area
+ * ----------------- */
+.filter-container {
+  padding: 20px 20px 10px 20px;
+  background-color: #fafbfc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.filter-container .el-form-item {
+  margin-bottom: 10px;
+}
+
+/* -----------------
+ * Table Styles
+ * ----------------- */
+.el-table {
+  border-radius: 4px;
+  overflow: hidden; /* Ensures border-radius is applied to the table */
+}
+
+/* Table Header */
+.el-table th {
+  background-color: #fafafa !important;
+  color: var(--text-color-primary);
+  font-weight: 600;
+}
+
+/* Table Row Hover */
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background-color: #f5f7fa !important;
+}
+
+/* Table Striped */
+.el-table--striped .el-table__body tr.el-table__row--striped td {
+  background: #fafafa;
+}
+
+/* -----------------
+ * Button Styles
+ * ----------------- */
+.el-button {
+  border-radius: var(--border-radius-base);
+}
+
+.el-button--primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.action-buttons .el-button {
+  margin-left: 10px;
+}
+
+/* -----------------
+ * Pagination
+ * ----------------- */
+.pagination-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}

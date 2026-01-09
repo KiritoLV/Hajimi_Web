@@ -47,4 +47,7 @@ public interface ClazzMapper {
     List<Clazz> findAll();
 
     List<Map<String, Object>> countEmpJobData();
+
+    @Select("SELECT COUNT(*) FROM clazz")
+    Integer getData();
 }

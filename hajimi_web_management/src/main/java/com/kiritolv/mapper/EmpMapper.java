@@ -36,4 +36,6 @@ public interface EmpMapper {
     List<Emp> getAllEmp();
 
     List<OperateLog> logQuery();
+    @Select("SELECT COUNT(*) FROM emp")
+    Integer getData();
 }

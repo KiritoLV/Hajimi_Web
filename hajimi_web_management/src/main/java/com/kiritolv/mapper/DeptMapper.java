@@ -20,4 +20,6 @@ public interface DeptMapper {
     Dept query(Integer id);
     @Update("update dept set name=#{name},update_time=#{updateTime}where id=#{id}")
     void updatename(Dept dept);
+    @Select("SELECT COUNT(*) FROM dept")
+    Integer getData();
 }
