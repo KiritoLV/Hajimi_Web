@@ -2,6 +2,7 @@ package com.kiritolv.mapper;
 
 import com.kiritolv.pojo.Emp;
 import com.kiritolv.pojo.EmpQueryParam;
+import com.kiritolv.pojo.OperateLog;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -33,4 +34,6 @@ public interface EmpMapper {
     Emp getUsernameAndPassword(Emp emp);
     @Select("select * from emp")
     List<Emp> getAllEmp();
+
+    List<OperateLog> logQuery();
 }

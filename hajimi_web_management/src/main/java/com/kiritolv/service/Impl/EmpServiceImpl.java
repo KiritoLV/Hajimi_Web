@@ -99,4 +99,12 @@ public class EmpServiceImpl implements EmpService {
         return empMapper.getAllEmp();
 
     }
+
+    @Override
+    public PageResult<OperateLog> logpage(Integer page,Integer pageSize) {
+        PageHelper.startPage(page,pageSize);
+        List<OperateLog> rows=empMapper.logQuery();
+        Page<OperateLog> p = (Page<OperateLog>) rows;
+        return new PageResult<OperateLog>(p.getTotal(),p.getResult());
+    }
 }

@@ -1,9 +1,6 @@
 package com.kiritolv.service;
 
-import com.kiritolv.pojo.Emp;
-import com.kiritolv.pojo.EmpQueryParam;
-import com.kiritolv.pojo.LoginInfo;
-import com.kiritolv.pojo.PageResult;
+import com.kiritolv.pojo.*;
 
 import java.util.List;
 
@@ -21,4 +18,6 @@ public interface EmpService {
     LoginInfo login(Emp emp);
 
     List<Emp> getAllEmp();
+
+    PageResult<OperateLog> logpage(Integer page,Integer pageSize);
 }

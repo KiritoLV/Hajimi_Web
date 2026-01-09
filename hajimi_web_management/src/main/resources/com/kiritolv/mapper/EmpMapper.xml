@@ -96,5 +96,14 @@
             count(*) as value
         from emp group by gender ;
     </select>
+    <select id="logQuery" resultType="com.kiritolv.pojo.OperateLog">
+        SELECT
+            ol.*,
+            e.name AS operateEmpName
+        FROM
+            operate_log ol
+                LEFT JOIN
+            emp e ON ol.operate_emp_id = e.id
+    </select>
 
 </mapper>
