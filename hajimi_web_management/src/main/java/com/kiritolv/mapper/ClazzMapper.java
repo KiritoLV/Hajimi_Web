@@ -1,10 +1,7 @@
 package com.kiritolv.mapper;
 
 import com.kiritolv.pojo.Clazz;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -46,8 +43,7 @@ public interface ClazzMapper {
     @Select("select * from clazz")
     List<Clazz> findAll();
 
+    @MapKey("clazz")
     List<Map<String, Object>> countEmpJobData();
 
-    @Select("SELECT COUNT(*) FROM clazz")
-    Integer getData();
 }

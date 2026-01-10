@@ -63,6 +63,4 @@ public interface StudentMapper {
      */
     void insertBatch(List<Student> studentList);
 
-    @Select("SELECT COUNT(*) FROM student")
-    Integer getData();
 }
