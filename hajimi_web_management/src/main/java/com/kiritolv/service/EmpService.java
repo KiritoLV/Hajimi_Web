@@ -20,4 +20,6 @@ public interface EmpService {
     List<Emp> getAllEmp();
 
     PageResult<OperateLog> logpage(Integer page,Integer pageSize);
+
+    void updatePassword(String oldPassword, String newPassword);
 }

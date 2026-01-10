@@ -3,11 +3,13 @@ import { ArrowDown } from "@element-plus/icons-vue";
 import { ElMessage, ElMessageBox } from "element-plus";
 import { computed, onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import ChangePasswordDialog from "./components/ChangePasswordDialog.vue";
 
 const router = useRouter();
 const route = useRoute();
 
 const loginName = ref("");
+const changePasswordDialogVisible = ref(false);
 
 // 计算面包屑导航
 const breadcrumbs = computed(() => {
@@ -29,6 +31,8 @@ onMounted(() => {
 const handleCommand = (command) => {
   if (command === "logout") {
     logout();
+  } else if (command === "changePassword") {
+    changePasswordDialogVisible.value = true;
   }
 };
 
@@ -157,6 +161,8 @@ const logout = () => {
         </el-main>
       </el-container>
     </el-container>
+    <!-- 修改密码弹窗 -->
+    <ChangePasswordDialog v-model="changePasswordDialogVisible" />
   </div>
 </template>
 

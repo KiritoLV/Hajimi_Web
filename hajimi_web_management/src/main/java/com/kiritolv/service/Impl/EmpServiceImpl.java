@@ -2,6 +2,7 @@ package com.kiritolv.service.Impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.kiritolv.exception.BusinessException;
 import com.kiritolv.mapper.EmpExprMapper;
 import com.kiritolv.mapper.EmpLogMapper;
 import com.kiritolv.mapper.EmpMapper;
@@ -9,6 +10,7 @@ import com.kiritolv.pojo.*;
 import com.kiritolv.service.EmpLogService;
 import com.kiritolv.service.EmpService;
 import com.kiritolv.util.JwtUtils;
+import com.kiritolv.util.ThreadLocalSave;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -106,5 +108,15 @@ public class EmpServiceImpl implements EmpService {
         List<OperateLog> rows=empMapper.logQuery();
         Page<OperateLog> p = (Page<OperateLog>) rows;
         return new PageResult<OperateLog>(p.getTotal(),p.getResult());
+    }
+
+    @Override
+    public void updatePassword(String oldPassword, String newPassword) {
+        Integer currentEmpId = ThreadLocalSave.getCurrentId();
+        Emp emp = empMapper.getById(currentEmpId);
+        if(!emp.getPassword().equals(oldPassword)){
+            throw new BusinessException("旧密码不正确");
+        }
+        empMapper.updatePassword(currentEmpId, newPassword);
     }
 }

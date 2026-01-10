@@ -36,4 +36,7 @@ public interface EmpMapper {
     List<Emp> getAllEmp();
 
     List<OperateLog> logQuery();
+
+    @Update("update emp set password = #{newPassword} where id = #{currentEmpId}")
+    void updatePassword(Integer currentEmpId, String newPassword);
 }

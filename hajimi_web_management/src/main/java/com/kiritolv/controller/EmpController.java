@@ -73,4 +73,11 @@ public class EmpController {
         List<Emp> emplist = empService.getAllEmp();
         return Result.success(emplist);
     }
+
+    @PutMapping("/password")
+    public Result ResetPassword(@RequestBody PasswordUpdate p){
+        log.info("修改密码");
+        empService.updatePassword(p.getOldPassword(), p.getNewPassword());
+        return Result.success();
+    }
 }
